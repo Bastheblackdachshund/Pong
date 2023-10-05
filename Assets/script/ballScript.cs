@@ -12,8 +12,8 @@ public class ballScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        xSpeed = 0.1f;
-        ySpeed = 0.1f;
+        xSpeed = 0.01f;
+        ySpeed = 0.01f;
         transform.position = new Vector3(Xposition, Yposition, 0);
 
 
