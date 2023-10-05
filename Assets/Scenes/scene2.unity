@@ -217,6 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53855785a566f6d44863180b87e8e039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
+  WestOrEast: West
 --- !u!1 &852434687
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53855785a566f6d44863180b87e8e039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
+  WestOrEast: East
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
