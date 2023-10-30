@@ -132,10 +132,9 @@ GameObject:
   - component: {fileID: 322505791}
   - component: {fileID: 322505790}
   - component: {fileID: 322505789}
-  - component: {fileID: 322505793}
   m_Layer: 0
   m_Name: WestPaddle
-  m_TagString: WWall
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,11 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  WestOrEast: West
-  Xposition: 0
-  Yposition: 0
-  xSpeed: 0
-  ySpeed: 0
+  leftOrRight: left
 --- !u!212 &322505791
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -271,33 +266,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &322505793
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322505788}
-  m_BodyType: 0
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &687896900
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +279,7 @@ GameObject:
   - component: {fileID: 687896901}
   m_Layer: 0
   m_Name: NorthWall
-  m_TagString: VWall
+  m_TagString: HWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -626,7 +594,7 @@ GameObject:
   - component: {fileID: 1354437254}
   m_Layer: 0
   m_Name: SouthWall
-  m_TagString: VWall
+  m_TagString: HWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -757,7 +725,7 @@ GameObject:
   - component: {fileID: 1382631769}
   m_Layer: 0
   m_Name: WestWall
-  m_TagString: HWall
+  m_TagString: Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,7 +858,7 @@ GameObject:
   - component: {fileID: 1801071409}
   m_Layer: 0
   m_Name: EastPaddle
-  m_TagString: WWall
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -954,11 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  WestOrEast: East
-  Xposition: 0
-  Yposition: 0
-  xSpeed: 0
-  ySpeed: 0
+  leftOrRight: right
 --- !u!212 &1801071407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1066,7 +1030,7 @@ GameObject:
   - component: {fileID: 1858248691}
   m_Layer: 0
   m_Name: EastWall
-  m_TagString: HWall
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1289,11 +1253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c9b28eafc771447996365b9f3ff040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   Xposition: 0
   Yposition: 0
   xSpeed: 0
   ySpeed: 0
+  scoreField: {fileID: 0}
+  topScore: 10
 --- !u!212 &1913273966
 SpriteRenderer:
   m_ObjectHideFlags: 0

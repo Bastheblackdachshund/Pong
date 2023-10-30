@@ -1,110 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class InputPaddle : MonoBehaviour
+public class inputPaddle : MonoBehaviour
 {
     public float speed = 3f;
-    private float yPosition = 0;
-    public string WestOrEast;
-    public float Xposition = 0f;
-    public float Yposition = 0f;
-    public float xSpeed = 0f;
-    public float ySpeed = 0f;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public string leftOrRight;
 
+    //function that handles movement and has variables for up and down keycode?
+    void setKeyAndMovement(KeyCode up, KeyCode down)
+    {
+        if (Input.GetKey(up) && transform.position.y <= 3.6f)
+        {
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
+        else if (Input.GetKey(down) && transform.position.y >= -3.6f)
+        {
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Change within Unity if it's left or the right paddle
+        if (leftOrRight == "left")
+        {
+            setKeyAndMovement(KeyCode.W, KeyCode.S);
+        }
+        else if (leftOrRight == "right")
+        {
+            setKeyAndMovement(KeyCode.UpArrow, KeyCode.DownArrow);
+        }
+      
         
-
-
-
-        if (WestOrEast == "West")
-        {
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
-                Debug.Log("Yes w is pressed");
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
-                Debug.Log("Yes S is pressed");
-            }
-        }
-        else if (WestOrEast == "East")
-        {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
-                Debug.Log("Yes up is pressed");
-            }
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
-                Debug.Log("Yes down is pressed");
-            }
-           
-            
-        }
-        else if (WestOrEast == "Or")
-        {
-            if (yPosition >= 3.6f)
-            {
-                ySpeed = ySpeed * -1f;
-            }
-            else if (yPosition <= -3.6f)
-            {
-                ySpeed = ySpeed * -1f;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
-                Debug.Log("Yes w is pressed");
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
-                Debug.Log("Yes S is pressed");
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
-                Debug.Log("Yes D is pressed");
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
-                Debug.Log("Yes A is pressed");
-            }
-
-        }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("HWall"))
-        {
-            Debug.Log("Yes");
-
-        }
-        else if (collision.gameObject.CompareTag("VWall"))
-        {
-            Debug.Log("Yes");
-
-
-        }
-    }
-    
-
-
-
 }
-    
-
-

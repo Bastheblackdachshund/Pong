@@ -8,6 +8,8 @@ TagManager:
   - HWall
   - Mean
   - WWall
+  - Right
+  - Left
   layers:
   - Default
   - TransparentFX

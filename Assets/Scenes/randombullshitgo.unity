@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 106316528}
   m_Layer: 0
   m_Name: NorthWall
-  m_TagString: VWall
+  m_TagString: HWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 624610420}
   m_Layer: 0
   m_Name: EastPaddle
-  m_TagString: WWall
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -377,7 +377,7 @@ Transform:
   m_GameObject: {fileID: 624610415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.4, y: -2.39, z: 0}
+  m_LocalPosition: {x: 8.4, y: 0.05, z: 0}
   m_LocalScale: {x: 0.349375, y: 2.6804688, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 700822061}
   m_Layer: 0
   m_Name: WestPaddle
-  m_TagString: WWall
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -524,7 +524,7 @@ Transform:
   m_GameObject: {fileID: 700822056}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.4, y: 2.28, z: 0}
+  m_LocalPosition: {x: -8.4, y: 0.06, z: 0}
   m_LocalScale: {x: 0.349375, y: 2.6804688, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -557,7 +557,6 @@ GameObject:
   - component: {fileID: 981140678}
   - component: {fileID: 981140677}
   - component: {fileID: 981140676}
-  - component: {fileID: 981140680}
   - component: {fileID: 981140681}
   - component: {fileID: 981140682}
   m_Layer: 0
@@ -625,11 +624,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c9b28eafc771447996365b9f3ff040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   Xposition: 0
   Yposition: 0
   xSpeed: 0
   ySpeed: 0
+  scoreField: {fileID: 0}
+  topScore: 10
 --- !u!212 &981140678
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -697,24 +697,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &981140680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981140674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53855785a566f6d44863180b87e8e039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  WestOrEast: Or
-  Xposition: 0
-  Yposition: 0
-  xSpeed: 0
-  ySpeed: 0
 --- !u!50 &981140681
 Rigidbody2D:
   serializedVersion: 4
@@ -754,11 +736,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61408a1b1b1a17a4fb0fe5d8d492be73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  speed: 3
+  leftOrRight: or
   Xposition: 0
   Yposition: 0
   xSpeed: 0
   ySpeed: 0
+  scoreField: {fileID: 0}
+  topScore: 10
 --- !u!1 &1101011742
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +757,7 @@ GameObject:
   - component: {fileID: 1101011743}
   m_Layer: 0
   m_Name: SouthWall
-  m_TagString: VWall
+  m_TagString: HWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,7 +1072,7 @@ GameObject:
   - component: {fileID: 2060741809}
   m_Layer: 0
   m_Name: WestWall
-  m_TagString: HWall
+  m_TagString: Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1218,7 +1203,7 @@ GameObject:
   - component: {fileID: 2067957856}
   m_Layer: 0
   m_Name: EastWall
-  m_TagString: HWall
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
