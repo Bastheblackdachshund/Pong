@@ -6,7 +6,7 @@ public class Bot : MonoBehaviour
 {
     public float ySpeed = 3f;
     private float yPosition = 0;
-    public GameObject ball;
+    //public GameObject ball;
     public string WestOrEast;
 
     // Start is called before the first frame update

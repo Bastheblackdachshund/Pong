@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 
 
@@ -21,7 +22,7 @@ public class ballScript : MonoBehaviour
     {
         Xposition = 0f;
         Yposition = 0f;
-        scoreField.text = leftScore + " - " + rightScore;
+        scoreField.text = leftScore.ToString() + " - " + rightScore.ToString();
         if (leftOrRight == "left")
         {
             xSpeed = 3f;
@@ -34,18 +35,18 @@ public class ballScript : MonoBehaviour
         }
     }
     // Start is called before the first frame update
-    void Start()    
+    void Start()
     {
-        xSpeed = 0.05f;
-        ySpeed = 0.05f;
+        xSpeed = 3f;
+        ySpeed = 3f;
         transform.position = new Vector3(Xposition, Yposition, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Xposition += xSpeed;
-        Yposition += ySpeed;
+        Xposition += xSpeed*Time.deltaTime;
+        Yposition += ySpeed*Time.deltaTime;
         transform.position = new Vector3(Xposition, Yposition, 0);
 
     }
@@ -68,7 +69,7 @@ public class ballScript : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
-            xSpeed = xSpeed * -1.1f;
+            xSpeed = xSpeed * -1f;
         }
 
     }
