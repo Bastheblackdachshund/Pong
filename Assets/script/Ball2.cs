@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ballScript : MonoBehaviour
+public class Ball2 : MonoBehaviour
 {
     public Text text;
     public float Xposition = 0f;
@@ -15,42 +15,27 @@ public class ballScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        xSpeed = 0.05f;
-        ySpeed = 0.05f;
-        transform.position = new Vector3(Xposition, Yposition, 0);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Xposition += xSpeed;
-        Yposition += ySpeed;
-        transform.position = new Vector3(Xposition, Yposition, 0);
+        
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("HWall"))
         {
+            transform.position = new Vector3(Xposition, Yposition, 0);
 
-            xSpeed = xSpeed * -1f;
         }
         else if (collision.gameObject.CompareTag("VWall"))
         {
-            ySpeed = ySpeed * -1f;
-      
-            
-        }
-        else if (collision.gameObject.CompareTag("WWall"))
-        {
-            
-            xSpeed = xSpeed * -1f;
+            ySpeed = ySpeed * 0f;
 
 
         }
-    }
-    private void reset()
-    {
-        transform.position = new Vector3(Xposition, Yposition, 0);
     }
 }
