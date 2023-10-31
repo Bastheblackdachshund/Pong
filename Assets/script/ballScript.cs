@@ -40,7 +40,7 @@ public class ballScript : MonoBehaviour
         xSpeed = 3f;
         ySpeed = 3f;
         transform.position = new Vector3(Xposition, Yposition, 0);
-        scoreField.text = "Score";
+        
     }
 
     // Update is called once per frame
@@ -49,6 +49,22 @@ public class ballScript : MonoBehaviour
         Xposition += xSpeed*Time.deltaTime;
         Yposition += ySpeed*Time.deltaTime;
         transform.position = new Vector3(Xposition, Yposition, 0);
+        if (leftScore >= topScore)
+        {
+            scoreField.text = "Left Player has won!";
+            xSpeed = 0;
+            ySpeed = 0;
+            Xposition = 0f;
+            Yposition = 0f;
+        }
+        else if (rightScore >= topScore)
+        {
+            scoreField.text = "Right Player has won!";
+            xSpeed = 0;
+            ySpeed = 0;
+            Xposition = 0f;
+            Yposition = 0f;
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
