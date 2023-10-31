@@ -40,6 +40,7 @@ public class ballScript : MonoBehaviour
         xSpeed = 3f;
         ySpeed = 3f;
         transform.position = new Vector3(Xposition, Yposition, 0);
+        scoreField.text = "Score";
     }
 
     // Update is called once per frame
