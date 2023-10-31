@@ -22,11 +22,11 @@ public class Bot : MonoBehaviour
         {
             yPosition = yPosition + ySpeed * Time.deltaTime;
             transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
-            if (yPosition >= 3.6f)
+            if (yPosition >= 5.4f)
             {
                 ySpeed = ySpeed * -1f;
             }
-            else if (yPosition <= -3.6f)
+            else if (yPosition <= -5.4f)
             {
                 ySpeed = ySpeed * -1f;
             }
