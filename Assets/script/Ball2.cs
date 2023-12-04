@@ -9,14 +9,26 @@ using UnityEngine.UIElements;
 
 public class ball2 : MonoBehaviour
 {
+    /// <summary>
+    /// settings for ball in 0 player mode
+    /// it should move in 2D and change course when it collides with a wall or paddle
+    /// when ball hits left or right wall it scores
+    /// if collides with paddle increase speed
+    /// </summary>
 
+    //variables
+    // floats are X/Y positions
     public float Xposition = 0f;
     public float Yposition = 0f;
+    // these increase the speed of the ball
     public float xSpeed = 0f;
     public float ySpeed = 0f;
+    //text object has to be linked in unity
     public TMP_Text scoreField;
+    //these refer to the score of the right and left paddle
     private int leftScore = 0;
     private int rightScore = 0;
+    //the score when it stops and shows the winner
     public int topScore = 10;
     private void resetBall(string leftOrRight)
     {
@@ -40,6 +52,7 @@ public class ball2 : MonoBehaviour
         xSpeed = 7f;
         ySpeed = 7f;
         transform.position = new Vector3(Xposition, Yposition, 0);
+
 
     }
 
@@ -86,7 +99,7 @@ public class ball2 : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
-            xSpeed = xSpeed * -1f;
+            xSpeed = xSpeed * -1.2f;
         }
 
     }
